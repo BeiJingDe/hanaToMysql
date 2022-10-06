@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: hanaToMysql
+  #mysql数据库连接信息
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver # 3.2.0开始支持SPI可省略此配置
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+server:
+  port: 8080
+mybatis-plus:
+  mapper-locations: classpath:/mappers/*.xml
+logging:
+  level:
+    com.abc: debug # 日志级别  可以指定包
+#hana数据库连接信息
+sap:
+  url: jdbc:sap://192.168.74.229:39015?reconnect=true&database=test
+  username: SYSTEM
+  password: ZTHzth123
+  driver: com.sap.db.jdbc.Driver
